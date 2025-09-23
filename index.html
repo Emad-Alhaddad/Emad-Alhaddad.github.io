@@ -390,10 +390,129 @@
             border-width: 2px;
         }
 
-        /* Hide on mobile devices */
+        /* MOBILE OPTIMIZATIONS */
         @media (max-width: 768px) {
             .mouse-follower {
                 display: none !important;
+            }
+
+            /* Voice Control Mobile */
+            .voice-control {
+                bottom: 100px;
+                left: 20px;
+                top: auto;
+                transform: none;
+            }
+
+            .voice-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .voice-status {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+                max-width: 200px;
+            }
+
+            /* Terminal Mobile */
+            .terminal-widget {
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                width: auto;
+                height: 60vh;
+                max-height: 400px;
+            }
+
+            .terminal-content {
+                font-size: 0.7rem;
+            }
+
+            /* AI Chatbot Mobile */
+            .ai-chatbot {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .chat-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .chat-window {
+                bottom: 70px;
+                right: 0;
+                width: calc(100vw - 40px);
+                height: 70vh;
+                max-height: 500px;
+                border-radius: 15px;
+            }
+
+            /* Hero Mobile Adjustments */
+            .hero {
+                height: 100vh;
+                padding: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem !important;
+            }
+
+            .hero .subtitle {
+                font-size: 1.3rem !important;
+            }
+
+            .hero .description {
+                font-size: 1rem !important;
+                padding: 0 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .btn {
+                padding: 12px 30px !important;
+                font-size: 1rem !important;
+                width: 200px;
+                text-align: center;
+            }
+
+            /* Hide complex animations on mobile for performance */
+            .neural-network,
+            .floating-3d-object,
+            #matrix-canvas {
+                display: none;
+            }
+
+            /* Simplify particle effects on mobile */
+            #particles-canvas,
+            #hero-3d-canvas {
+                opacity: 0.3;
+            }
+
+            /* GitHub stats mobile */
+            .github-stats {
+                margin: 1rem 0;
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .stat-box {
+                padding: 0.8rem;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
             }
         }
 
@@ -2359,8 +2478,12 @@
                 this.canvas.width = window.innerWidth;
                 this.canvas.height = window.innerHeight;
                 
+                // Reduce particles on mobile for performance
+                const isMobile = window.innerWidth <= 768;
+                const particleCount = isMobile ? 30 : 100;
+                
                 // Create particles
-                for (let i = 0; i < 100; i++) {
+                for (let i = 0; i < particleCount; i++) {
                     this.particles.push({
                         x: Math.random() * this.canvas.width,
                         y: Math.random() * this.canvas.height,
@@ -2678,6 +2801,12 @@
                 this.canvas.height = window.innerHeight;
                 this.columns = this.canvas.width / this.fontSize;
                 
+                // Reduce columns on mobile for performance
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                    this.columns = Math.floor(this.columns / 2);
+                }
+                
                 for (let i = 0; i < this.columns; i++) {
                     this.drops[i] = 1;
                 }
@@ -2932,10 +3061,20 @@
             }
 
             init() {
-                // Check for browser support
+                // Check for browser support and mobile
                 if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
                     console.log('Speech recognition not supported');
+                    // Hide voice control on unsupported devices
+                    const voiceControl = document.querySelector('.voice-control');
+                    if (voiceControl) voiceControl.style.display = 'none';
                     return;
+                }
+
+                // Show different message on mobile
+                const isMobile = window.innerWidth <= 768;
+                const status = document.getElementById('voice-status');
+                if (isMobile) {
+                    status.textContent = 'Tap mic & say "show skills"';
                 }
 
                 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -2945,7 +3084,6 @@
                 this.recognition.lang = 'en-US';
 
                 const button = document.getElementById('voice-button');
-                const status = document.getElementById('voice-status');
 
                 button.addEventListener('click', () => {
                     if (this.isListening) {
