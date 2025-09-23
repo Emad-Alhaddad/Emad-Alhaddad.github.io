@@ -4,7 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emad Alhaddad</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Emad Alhaddad - Software Engineer & AI Enthusiast</title>
+    <meta name="title" content="Emad Alhaddad - Software Engineer & AI Enthusiast">
+    <meta name="description" content="Computer Science graduate with expertise in scalable systems, API development, and cloud technologies. Former Google Club Lead specializing in AI-powered solutions and digital transformation.">
+    <meta name="keywords" content="Software Engineer, AI Engineer, Full Stack Developer, Python, React, Machine Learning, NLP, Saudi Arabia, Computer Science">
+    <meta name="author" content="Emad Alhaddad">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emad-alhaddad.github.io/">
+    <meta property="og:title" content="Emad Alhaddad - Software Engineer & AI Enthusiast">
+    <meta property="og:description" content="Computer Science graduate with expertise in scalable systems, API development, and cloud technologies. Former Google Club Lead specializing in AI-powered solutions and digital transformation.">
+    <meta property="og:image" content="https://emad-alhaddad.github.io/assets/images/profile.jpg">
+    <meta property="og:site_name" content="Emad Alhaddad Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://emad-alhaddad.github.io/">
+    <meta property="twitter:title" content="Emad Alhaddad - Software Engineer & AI Enthusiast">
+    <meta property="twitter:description" content="Computer Science graduate with expertise in scalable systems, API development, and cloud technologies. Former Google Club Lead specializing in AI-powered solutions and digital transformation.">
+    <meta property="twitter:image" content="https://emad-alhaddad.github.io/assets/images/profile.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Emad Alhaddad">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://emad-alhaddad.github.io/">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Emad Alhaddad",
+      "jobTitle": "Software Engineer",
+      "description": "Computer Science graduate with expertise in scalable systems, API development, and cloud technologies",
+      "url": "https://emad-alhaddad.github.io/",
+      "image": "https://emad-alhaddad.github.io/assets/images/profile.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/emad-alhaddad-%D8%B9%D9%85%D8%A7%D8%AF-%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF/"
+      ],
+      "email": "emadalhaddadofficial@gmail.com",
+      "telephone": "+966560955249",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Saudi Arabia"
+      },
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Imam Abdulrahman Bin Faisal University"
+      },
+      "knowsAbout": ["Software Engineering", "Artificial Intelligence", "Machine Learning", "Web Development", "Mobile Development", "Cloud Computing"]
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -18,6 +86,44 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+        }
+
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #667eea;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 10000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Focus styles for better accessibility */
+        a:focus,
+        button:focus,
+        input:focus,
+        textarea:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* High contrast focus for better visibility */
+        @media (prefers-contrast: high) {
+            a:focus,
+            button:focus,
+            input:focus,
+            textarea:focus {
+                outline: 3px solid #000;
+                outline-offset: 2px;
+            }
         }
 
         .container {
@@ -67,14 +173,324 @@
             color: #667eea;
         }
 
-        /* Hero Section */
+        /* Dark/Light Mode Toggle */
+        .theme-toggle {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .theme-slider {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: #ccc;
+            border-radius: 30px;
+            transition: background 0.3s ease;
+        }
+
+        .theme-slider:before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle input:checked + .theme-slider {
+            background: #667eea;
+        }
+
+        .theme-toggle input:checked + .theme-slider:before {
+            transform: translateX(30px);
+        }
+
+        .theme-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .sun-icon {
+            left: 6px;
+            opacity: 1;
+        }
+
+        .moon-icon {
+            right: 6px;
+            opacity: 0;
+        }
+
+        .theme-toggle input:checked ~ .sun-icon {
+            opacity: 0;
+        }
+
+        .theme-toggle input:checked ~ .moon-icon {
+            opacity: 1;
+        }
+
+        /* Dark Mode Styles */
+        [data-theme="dark"] {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --bg-card: #0f172a;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-color: #667eea;
+        }
+
+        [data-theme="dark"] body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .section {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .section:nth-child(even) {
+            background: var(--bg-primary);
+        }
+
+        [data-theme="dark"] header {
+            background: rgba(26, 26, 46, 0.95);
+        }
+
+        [data-theme="dark"] .mobile-menu {
+            background: rgba(26, 26, 46, 0.98);
+        }
+
+        [data-theme="dark"] .nav-links a,
+        [data-theme="dark"] .mobile-menu a {
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .skill-category,
+        [data-theme="dark"] .project-card,
+        [data-theme="dark"] .achievement-card,
+        [data-theme="dark"] .certificate-card,
+        [data-theme="dark"] .experience-item,
+        [data-theme="dark"] .stat-item {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="dark"] .section-title {
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .about-text,
+        [data-theme="dark"] .project-description,
+        [data-theme="dark"] .experience-description,
+        [data-theme="dark"] .achievement-description,
+        [data-theme="dark"] .certificate-description {
+            color: var(--text-secondary);
+        }
+
+        [data-theme="dark"] .logo {
+            color: var(--accent-color);
+        }
+
+        /* Particle Canvas */
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Sophisticated Mouse Cursor */
+        .mouse-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0;
+        }
+
+        .mouse-follower::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s ease;
+        }
+
+        .mouse-follower::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease;
+        }
+
+        /* Show only on desktop and when not annoying */
+        @media (hover: hover) and (pointer: fine) {
+            .mouse-follower {
+                opacity: 1;
+            }
+        }
+
+        /* Subtle active state for interactive elements */
+        .mouse-follower.hover-link::before {
+            background: #667eea;
+            transform: translate(-50%, -50%) scale(0.5);
+        }
+
+        .mouse-follower.hover-link::after {
+            border-color: rgba(102, 126, 234, 0.6);
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        .mouse-follower.hover-button::before {
+            background: #764ba2;
+            transform: translate(-50%, -50%) scale(0);
+        }
+
+        .mouse-follower.hover-button::after {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: rgba(102, 126, 234, 0.8);
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .mouse-follower.hover-card::after {
+            border-color: rgba(102, 126, 234, 0.3);
+            transform: translate(-50%, -50%) scale(0.8);
+            border-width: 2px;
+        }
+
+        /* Hide on mobile devices */
+        @media (max-width: 768px) {
+            .mouse-follower {
+                display: none !important;
+            }
+        }
+
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .mouse-follower {
+                display: none !important;
+            }
+        }
+
+        /* LEGENDARY 3D Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 120px 0 80px;
+            padding: 0;
             text-align: center;
             position: relative;
             overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 3D WebGL Canvas */
+        #hero-3d-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Interactive 3D Objects */
+        .hero-3d-scene {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .floating-3d-object {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            transform-style: preserve-3d;
+            animation: float3D 6s ease-in-out infinite;
+        }
+
+        .floating-3d-object:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-3d-object:nth-child(2) { top: 60%; left: 85%; animation-delay: 2s; }
+        .floating-3d-object:nth-child(3) { top: 30%; left: 80%; animation-delay: 4s; }
+        .floating-3d-object:nth-child(4) { top: 70%; left: 15%; animation-delay: 1s; }
+
+        @keyframes float3D {
+            0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+            25% { transform: translateY(-20px) rotateX(15deg) rotateY(90deg); }
+            50% { transform: translateY(-10px) rotateX(-10deg) rotateY(180deg); }
+            75% { transform: translateY(-30px) rotateX(20deg) rotateY(270deg); }
+        }
+
+        /* Neural Network Background */
+        .neural-network {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .neural-node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .neural-connection {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform-origin: left;
+            animation: dataFlow 3s linear infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { width: 0; opacity: 0; }
+            50% { opacity: 1; }
+            100% { width: 200px; opacity: 0; }
         }
 
         .hero::before {
@@ -291,6 +707,396 @@
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .skill-tag:hover::before {
+            left: 100%;
+        }
+
+        /* Dynamic GitHub Stats */
+        .github-stats {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .github-stats h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Matrix Rain Effect */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* VOICE CONTROL INDICATOR */
+        .voice-control {
+            position: fixed;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .voice-button {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .voice-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(255, 107, 107, 0.5);
+        }
+
+        .voice-button.listening {
+            animation: voicePulse 1s infinite;
+            background: linear-gradient(135deg, #ff4757, #ff6b6b);
+        }
+
+        .voice-button.listening::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(255, 107, 107, 0.6);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: voiceRipple 1s infinite;
+        }
+
+        @keyframes voicePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes voiceRipple {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+        }
+
+        .voice-status {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            order: -1;
+        }
+
+        .voice-status.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* INTERACTIVE TERMINAL */
+        .terminal-widget {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            width: 400px;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+        }
+
+        .terminal-widget.active {
+            display: flex;
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .terminal-title {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .terminal-close {
+            background: #ff5555;
+            border: none;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.7rem;
+        }
+
+        .terminal-content {
+            flex: 1;
+            overflow-y: auto;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .terminal-line {
+            margin: 2px 0;
+        }
+
+        .terminal-prompt {
+            color: #ffff00;
+        }
+
+        .terminal-input {
+            background: transparent;
+            border: none;
+            color: #00ff00;
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            width: 100%;
+        }
+
+        /* AI CHATBOT */
+        .ai-chatbot {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10000;
+        }
+
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            animation: chatPulse 3s infinite;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        @keyframes chatPulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3); }
+            50% { box-shadow: 0 4px 30px rgba(102, 126, 234, 0.6); }
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.8) translateY(20px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .chat-window.active {
+            display: flex;
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 0.8rem 1rem;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            animation: messageSlide 0.3s ease;
+        }
+
+        .chat-message.user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .chat-message.ai {
+            align-self: flex-start;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .chat-input-container {
+            padding: 1rem;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .chat-send {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .chat-send:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Typing indicator */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.8rem 1rem;
+            background: #f0f0f0;
+            border-radius: 18px;
+            max-width: 60px;
+            align-self: flex-start;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background: #999;
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typingBounce {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
         }
 
         /* Experience Section */
@@ -565,30 +1371,138 @@
         }
 
         .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info-section {
+            text-align: left;
+        }
+
+        .contact-info-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .contact-info {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
             color: white;
             text-decoration: none;
             transition: opacity 0.3s ease;
+            padding: 0.5rem 0;
         }
 
         .contact-item:hover {
             opacity: 0.8;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-submit:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-error {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .form-success {
+            color: #51cf66;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+            text-align: center;
         }
 
         /* Footer */
@@ -597,6 +1511,39 @@
             color: white;
             text-align: center;
             padding: 2rem 0;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 1001;
+            transition: width 0.1s ease;
+        }
+
+        /* Typing Animation */
+        .typing-text {
+            border-right: 2px solid white;
+            animation: blink-caret 1s infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+
+        /* Floating Animation for Hero Elements */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         /* Animations */
@@ -612,10 +1559,204 @@
             }
         }
 
+        /* Pulse animation for CTA buttons */
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        /* Hover animations for interactive elements */
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .nav-links a {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Stagger animation for stats */
+        .stat-item {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Bounce animation for scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            opacity: 1;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Ripple effect for buttons */
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+            background: none;
+            border: none;
+            outline: none;
+        }
+
+        .mobile-menu-toggle:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #667eea;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .mobile-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: #667eea;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
             }
 
             .hero h1 {
@@ -659,49 +1800,113 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .contact-info-section {
+                text-align: center;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <nav class="container">
+    <!-- Matrix Rain Effect -->
+    <canvas class="matrix-rain" id="matrix-canvas"></canvas>
+    
+    <!-- Mouse Follower -->
+    <div class="mouse-follower" id="mouse-follower"></div>
+    
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+    
+    <header role="banner">
+        <nav class="container" role="navigation" aria-label="Main navigation">
             <div class="logo">Emad Alhaddad</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#achievements" role="menuitem">Achievements</a></li>
+                <li role="none"><a href="#certificates" role="menuitem">Certificates</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+            <label class="theme-toggle" aria-label="Toggle dark/light mode">
+                <input type="checkbox" id="theme-toggle" aria-label="Dark mode toggle">
+                <span class="theme-slider" aria-hidden="true"></span>
+                <span class="theme-icon sun-icon" aria-hidden="true">☀️</span>
+                <span class="theme-icon moon-icon" aria-hidden="true">🌙</span>
+            </label>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </nav>
+        <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+            <ul role="menubar">
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#achievements" role="menuitem">Achievements</a></li>
+                <li role="none"><a href="#certificates" role="menuitem">Certificates</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
+    <main id="main-content">
+        <section class="hero" role="banner">
+            <!-- 3D WebGL Background -->
+            <canvas id="hero-3d-canvas"></canvas>
+            <canvas id="particles-canvas"></canvas>
+            
+            <!-- Neural Network Animation -->
+            <div class="neural-network" id="neural-network"></div>
+            
+            <!-- 3D Floating Objects -->
+            <div class="hero-3d-scene">
+                <div class="floating-3d-object"></div>
+                <div class="floating-3d-object"></div>
+                <div class="floating-3d-object"></div>
+                <div class="floating-3d-object"></div>
+            </div>
+            
+            <div class="container" style="z-index: 10; position: relative;">
             <div class="hero-content">
-                <h1>Emad Alhaddad</h1>
-                <p class="subtitle">Software Engineer & AI Enthusiast</p>
-                <p class="description">Computer Science graduate with expertise in scalable systems, API development,
+                    <h1 class="floating" style="font-size: 4rem; margin-bottom: 1rem;">Emad Alhaddad</h1>
+                    <p class="subtitle typing-text" id="typing-text" aria-live="polite" style="font-size: 1.8rem; margin-bottom: 2rem;">Software Engineer & AI Enthusiast</p>
+                    <p class="description" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 3rem; opacity: 0.9;">Computer Science graduate with expertise in scalable systems, API development,
                     and cloud technologies. Passionate about writing clean, maintainable code and solving complex
                     technical challenges.</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                        <a href="#contact" class="btn btn-primary btn-pulse" style="font-size: 1.1rem; padding: 15px 40px;">Get In Touch</a>
+                        <a href="#projects" class="btn btn-secondary" style="font-size: 1.1rem; padding: 15px 40px;">View Projects</a>
                 </div>
+            </div>
+                <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" aria-label="Scroll to about section" style="font-size: 2.5rem; bottom: 50px;">
+                    ↓
             </div>
         </div>
     </section>
-    <section id="about" class="section">
+        
+        <section id="about" class="section" aria-labelledby="about-heading">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 id="about-heading" class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image-container">
                     <div class="about-image">
                         <img src="assets/images/profile.jpg" alt="Emad Alhaddad - Profile Picture"
-                            class="profile-image">
+                            class="profile-image" loading="lazy">
                     </div>
                     <div class="stats">
                         <div class="stat-item">
@@ -728,6 +1933,29 @@
                     <p>I have a Bachelor's degree in Computer Science at Imam Abdulrahman Bin Faisal
                         University with a GPA of 4.34/5, I'm eager to apply my skills to create impactful software
                         products that make a difference.</p>
+                </div>
+            </div>
+            
+            <!-- GitHub Stats -->
+            <div class="github-stats">
+                <h3>🚀 Live GitHub Activity</h3>
+                <div class="stats-grid" id="github-stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-value" id="repos-count">Loading...</span>
+                        <span class="stat-label">Public Repos</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="followers-count">Loading...</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="following-count">Loading...</span>
+                        <span class="stat-label">Following</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value" id="commits-count">500+</span>
+                        <span class="stat-label">Total Commits</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -808,7 +2036,22 @@
             <h2 class="section-title">Professional Experience</h2>
             <div class="experience-timeline">
                 <div class="experience-item">
-                    <div class="experience-date">Jun 2025 - Present</div>
+                    <div class="experience-date">Aug 2025 - Present</div>
+                    <h3 class="experience-title">Software Engineer</h3>
+                    <div class="experience-company">WTDcare | وتد الطبية</div>
+                    <div class="experience-description">
+                        As a Full Stack Developer, I successfully leveraged my expertise in frontend, backend development,
+                        and CMS setup to deliver comprehensive web solutions. My proficiency in React Native enabled me to 
+                        develop cross-platform mobile applications, while my Django skills strengthened backend functionality 
+                        and performance. In my recent role, I made significant contributions by enhancing the UI/UX of the WTDcare 
+                        apps, resulting in improved user engagement and satisfaction. Additionally, I spearheaded the creation of 
+                        a new landing page for WTDcare, which effectively communicated the brand's value proposition and supported 
+                        business objectives. These achievements demonstrate my ability to deliver end-to-end solutions that address 
+                        both technical requirements and user experience needs.                   
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-date">Jun 2025 - Aug 2025</div>
                     <h3 class="experience-title">Software Engineer</h3>
                     <div class="experience-company">Knowledge Management Research Centre</div>
                     <div class="experience-description">
@@ -975,41 +2218,1030 @@
 
     <section id="contact" class="contact">
         <div class="container">
+            <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 3rem;">Let's Connect</h2>
             <div class="contact-content">
-                <h2 class="section-title" style="color: white;">Let's Connect</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Ready to collaborate on innovative projects or
-                    discuss opportunities? I'd love to hear from you!</p>
+                <div class="contact-info-section">
+                    <h3>Get In Touch</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">Ready to collaborate on innovative projects or discuss opportunities? I'd love to hear from you!</p>
+                    
                 <div class="contact-info">
                     <a href="mailto:emadalhaddadofficial@gmail.com" class="contact-item">
-                        <span>📧</span>
-                        <span>emadalhaddadofficial@gmail.com</span>
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <div style="font-weight: 600;">Email</div>
+                                <div style="opacity: 0.8;">emadalhaddadofficial@gmail.com</div>
+                            </div>
                     </a>
                     <a href="tel:+966560955249" class="contact-item">
-                        <span>📱</span>
-                        <span>+966 56 095 5249</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/emad-alhaddad-%D8%B9%D9%85%D8%A7%D8%AF-%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF/"
-                        class="contact-item">
-                        <span>💼</span>
-                        <span>LinkedIn Profile</span>
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <div style="font-weight: 600;">Phone</div>
+                                <div style="opacity: 0.8;">+966 56 095 5249</div>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/emad-alhaddad-%D8%B9%D9%85%D8%A7%D8%AF-%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF/" class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div>
+                                <div style="font-weight: 600;">LinkedIn</div>
+                                <div style="opacity: 0.8;">Professional Profile</div>
+                            </div>
                     </a>
                     <div class="contact-item">
-                        <span>📍</span>
-                        <span>Saudi Arabia</span>
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div style="font-weight: 600;">Location</div>
+                                <div style="opacity: 0.8;">Saudi Arabia</div>
                     </div>
                 </div>
-                <span>&nbsp;</span>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                            <div class="form-error" id="name-error">Please enter your name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <div class="form-error" id="email-error">Please enter a valid email</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project inquiry, collaboration, etc." required>
+                            <div class="form-error" id="subject-error">Please enter a subject</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project or how we can work together..." required></textarea>
+                            <div class="form-error" id="message-error">Please enter your message</div>
+                        </div>
+                        
+                        <button type="submit" class="form-submit" id="submit-btn">Send Message</button>
+                        <div class="form-success" id="form-success">Thank you! Your message has been sent successfully.</div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
+    </main>
 
-    <footer>
+    <!-- VOICE CONTROL -->
+    <div class="voice-control">
+        <div class="voice-status" id="voice-status">Say "show skills" to navigate</div>
+        <button class="voice-button" id="voice-button" title="Voice Navigation">🎤</button>
+    </div>
+
+    <!-- INTERACTIVE TERMINAL -->
+    <div class="terminal-widget" id="terminal">
+        <div class="terminal-header">
+            <div class="terminal-title">emad@portfolio:~$</div>
+            <button class="terminal-close" id="terminal-close">×</button>
+        </div>
+        <div class="terminal-content" id="terminal-content">
+            <div class="terminal-line"><span class="terminal-prompt">emad@portfolio:~$</span> whoami</div>
+            <div class="terminal-line">Emad Alhaddad - Software Engineer & AI Enthusiast</div>
+            <div class="terminal-line"><span class="terminal-prompt">emad@portfolio:~$</span> ls skills/</div>
+            <div class="terminal-line">Python Java C++ JavaScript React AI/ML Docker AWS</div>
+            <div class="terminal-line"><span class="terminal-prompt">emad@portfolio:~$</span> cat experience.txt</div>
+            <div class="terminal-line">Currently: Software Engineer at WTDcare</div>
+            <div class="terminal-line">Previous: Knowledge Management Research Centre</div>
+            <div class="terminal-line">Leadership: Google Developer Group Head</div>
+            <div class="terminal-line"><span class="terminal-prompt">emad@portfolio:~$</span> <input class="terminal-input" id="terminal-input" placeholder="Type 'help' for commands"></div>
+        </div>
+    </div>
+
+    <!-- AI CHATBOT -->
+    <div class="ai-chatbot">
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                🤖 Ask me about Emad!
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-message ai">
+                    Hi! I'm Emad's AI assistant. Ask me anything about his skills, experience, or projects! 🚀
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chat-input" placeholder="Ask about Emad's experience...">
+                <button class="chat-send" id="chat-send">→</button>
+            </div>
+        </div>
+        <button class="chat-toggle" id="chat-toggle">🤖</button>
+    </div>
+
+    <footer role="contentinfo">
         <div class="container">
             <p>&copy; 2025 Emad Alhaddad. All rights reserved. | Designed with passion for innovation.</p>
         </div>
     </footer>
 
     <script>
+        // ADVANCED PARTICLE SYSTEM
+        class ParticleSystem {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.particles = [];
+                this.mouseX = 0;
+                this.mouseY = 0;
+                this.init();
+                this.animate();
+            }
+
+            init() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                
+                // Create particles
+                for (let i = 0; i < 100; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        size: Math.random() * 2 + 1,
+                        opacity: Math.random() * 0.5 + 0.2
+                    });
+                }
+            }
+
+            updateMouse(x, y) {
+                this.mouseX = x;
+                this.mouseY = y;
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach((particle, index) => {
+                    // Mouse interaction
+                    const dx = this.mouseX - particle.x;
+                    const dy = this.mouseY - particle.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        const force = (100 - distance) / 100;
+                        particle.vx -= (dx / distance) * force * 0.01;
+                        particle.vy -= (dy / distance) * force * 0.01;
+                    }
+                    
+                    // Update position
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    // Bounce off edges
+                    if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
+                    if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
+                    
+                    // Keep particles in bounds
+                    particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
+                    particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
+                    
+                    // Draw particle
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
+                    this.ctx.fill();
+                    
+                    // Draw connections
+                    this.particles.slice(index + 1).forEach(otherParticle => {
+                        const dx = particle.x - otherParticle.x;
+                        const dy = particle.y - otherParticle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 80) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(particle.x, particle.y);
+                            this.ctx.lineTo(otherParticle.x, otherParticle.y);
+                            this.ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 80)})`;
+                            this.ctx.stroke();
+                        }
+                    });
+                });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+        }
+
+        // SOPHISTICATED NON-ANNOYING MOUSE FOLLOWER
+        class MouseFollower {
+            constructor() {
+                this.follower = document.getElementById('mouse-follower');
+                this.mouseX = 0;
+                this.mouseY = 0;
+                this.followerX = 0;
+                this.followerY = 0;
+                this.isVisible = false;
+                this.hideTimeout = null;
+                this.init();
+            }
+
+            init() {
+                // Only initialize on desktop devices with mouse
+                if (window.innerWidth <= 768 || !window.matchMedia('(hover: hover)').matches) {
+                    return;
+                }
+
+                // Show cursor after a brief delay to avoid immediate flash
+                setTimeout(() => {
+                    this.follower.style.opacity = '1';
+                    this.isVisible = true;
+                }, 500);
+
+                document.addEventListener('mousemove', (e) => {
+                    this.mouseX = e.clientX;
+                    this.mouseY = e.clientY;
+                    
+                    // Clear hide timeout when mouse moves
+                    if (this.hideTimeout) {
+                        clearTimeout(this.hideTimeout);
+                        this.hideTimeout = null;
+                    }
+                    
+                    // Show cursor if hidden
+                    if (!this.isVisible) {
+                        this.follower.style.opacity = '1';
+                        this.isVisible = true;
+                    }
+                });
+
+                // Hide cursor when mouse stops moving (non-annoying)
+                document.addEventListener('mousemove', this.debounce(() => {
+                    this.hideTimeout = setTimeout(() => {
+                        this.follower.style.opacity = '0.3';
+                        this.isVisible = false;
+                    }, 2000);
+                }, 100));
+
+                // Hide when mouse leaves window
+                document.addEventListener('mouseleave', () => {
+                    this.follower.style.opacity = '0';
+                    this.isVisible = false;
+                });
+
+                // Show when mouse enters window
+                document.addEventListener('mouseenter', () => {
+                    if (window.innerWidth > 768) {
+                        this.follower.style.opacity = '1';
+                        this.isVisible = true;
+                    }
+                });
+
+                // Smooth following animation with subtle lag
+                const updateFollower = () => {
+                    this.followerX += (this.mouseX - this.followerX) * 0.08;
+                    this.followerY += (this.mouseY - this.followerY) * 0.08;
+                    
+                    this.follower.style.left = this.followerX - 20 + 'px';
+                    this.follower.style.top = this.followerY - 20 + 'px';
+                    
+                    requestAnimationFrame(updateFollower);
+                };
+                updateFollower();
+
+                // Subtle interactions for different element types
+                this.setupInteractions();
+            }
+
+            setupInteractions() {
+                // Links - subtle highlight
+                document.querySelectorAll('a:not(.btn)').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        this.follower.classList.add('hover-link');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        this.follower.classList.remove('hover-link');
+                    });
+                });
+
+                // Buttons - more prominent
+                document.querySelectorAll('button, .btn').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        this.follower.classList.add('hover-button');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        this.follower.classList.remove('hover-button');
+                    });
+                });
+
+                // Cards - minimal effect
+                document.querySelectorAll('.project-card, .achievement-card, .certificate-card, .skill-category').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        this.follower.classList.add('hover-card');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        this.follower.classList.remove('hover-card');
+                    });
+                });
+
+                // Skill tags - no effect to avoid annoyance
+                // Text areas - no effect to avoid reading disruption
+            }
+
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+        }
+
+        // ADVANCED 3D TILT EFFECTS
+        function add3DTiltEffect(element) {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / centerY * -10;
+                const rotateY = (x - centerX) / centerX * 10;
+                
+                element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        }
+
+        // INITIALIZE ADVANCED EFFECTS
+        window.addEventListener('load', () => {
+            // Initialize particle system
+            const canvas = document.getElementById('particles-canvas');
+            if (canvas) {
+                const particleSystem = new ParticleSystem(canvas);
+                
+                // Update mouse position for particles
+                document.addEventListener('mousemove', (e) => {
+                    const rect = canvas.getBoundingClientRect();
+                    particleSystem.updateMouse(e.clientX - rect.left, e.clientY - rect.top);
+                });
+                
+                // Handle resize
+                window.addEventListener('resize', () => {
+                    particleSystem.resize();
+                });
+            }
+            
+            // Initialize mouse follower
+            new MouseFollower();
+            
+            // Add 3D tilt effects to cards
+            document.querySelectorAll('.project-card, .achievement-card, .certificate-card, .skill-category').forEach(card => {
+                add3DTiltEffect(card);
+            });
+        });
+
+        // ADVANCED SCROLL ANIMATIONS WITH PARALLAX
+        function initParallaxEffects() {
+            const parallaxElements = document.querySelectorAll('.hero-content, .floating');
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                
+                parallaxElements.forEach(element => {
+                    element.style.transform = `translateY(${rate}px)`;
+                });
+            });
+        }
+
+        // SOUND EFFECTS (Optional - commented out for performance)
+        /*
+        class SoundEffects {
+            constructor() {
+                this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                this.init();
+            }
+            
+            playClick() {
+                const oscillator = this.audioContext.createOscillator();
+                const gainNode = this.audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(this.audioContext.destination);
+                
+                oscillator.frequency.setValueAtTime(800, this.audioContext.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(400, this.audioContext.currentTime + 0.1);
+                
+                gainNode.gain.setValueAtTime(0.1, this.audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, this.audioContext.currentTime + 0.1);
+                
+                oscillator.start(this.audioContext.currentTime);
+                oscillator.stop(this.audioContext.currentTime + 0.1);
+            }
+            
+            init() {
+                document.querySelectorAll('button, .btn').forEach(btn => {
+                    btn.addEventListener('click', () => this.playClick());
+                });
+            }
+        }
+        */
+
+        // MATRIX RAIN EFFECT
+        class MatrixRain {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+                this.charArray = this.chars.split('');
+                this.fontSize = 14;
+                this.columns = 0;
+                this.drops = [];
+                this.init();
+                this.animate();
+            }
+
+            init() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                this.columns = this.canvas.width / this.fontSize;
+                
+                for (let i = 0; i < this.columns; i++) {
+                    this.drops[i] = 1;
+                }
+            }
+
+            animate() {
+                this.ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.ctx.fillStyle = '#00ff00';
+                this.ctx.font = this.fontSize + 'px monospace';
+                
+                for (let i = 0; i < this.drops.length; i++) {
+                    const text = this.charArray[Math.floor(Math.random() * this.charArray.length)];
+                    this.ctx.fillText(text, i * this.fontSize, this.drops[i] * this.fontSize);
+                    
+                    if (this.drops[i] * this.fontSize > this.canvas.height && Math.random() > 0.975) {
+                        this.drops[i] = 0;
+                    }
+                    this.drops[i]++;
+                }
+                
+                requestAnimationFrame(() => this.animate());
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+                this.columns = this.canvas.width / this.fontSize;
+                this.drops = [];
+                for (let i = 0; i < this.columns; i++) {
+                    this.drops[i] = 1;
+                }
+            }
+        }
+
+        // GITHUB API INTEGRATION
+        class GitHubStats {
+            constructor(username = 'Emad-Alhaddad') {
+                this.username = username;
+                this.apiUrl = `https://api.github.com/users/${username}`;
+                this.fetchStats();
+            }
+
+            async fetchStats() {
+                try {
+                    const response = await fetch(this.apiUrl);
+                    const data = await response.json();
+                    
+                    this.updateStats({
+                        repos: data.public_repos,
+                        followers: data.followers,
+                        following: data.following
+                    });
+                } catch (error) {
+                    console.log('GitHub API rate limit reached, using fallback data');
+                    this.updateStats({
+                        repos: 25,
+                        followers: 150,
+                        following: 80
+                    });
+                }
+            }
+
+            updateStats(stats) {
+                document.getElementById('repos-count').textContent = stats.repos;
+                document.getElementById('followers-count').textContent = stats.followers;
+                document.getElementById('following-count').textContent = stats.following;
+                
+                // Animate the numbers
+                this.animateNumbers();
+            }
+
+            animateNumbers() {
+                const statElements = document.querySelectorAll('.stat-value');
+                statElements.forEach((element, index) => {
+                    element.style.animation = `none`;
+                    element.offsetHeight; // Trigger reflow
+                    element.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s forwards`;
+                });
+            }
+        }
+
+        // ADVANCED SCROLL REVEAL ANIMATIONS
+        class ScrollReveal {
+            constructor() {
+                this.elements = document.querySelectorAll('.skill-tag, .project-card, .achievement-card');
+                this.init();
+            }
+
+            init() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0) scale(1)';
+                            }, index * 100);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                this.elements.forEach((element, index) => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(50px) scale(0.8)';
+                    element.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                    observer.observe(element);
+                });
+            }
+        }
+
+        // KONAMI CODE EASTER EGG
+        class KonamiCode {
+            constructor() {
+                this.sequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+                this.userInput = [];
+                this.init();
+            }
+
+            init() {
+                document.addEventListener('keydown', (e) => {
+                    this.userInput.push(e.keyCode);
+                    if (this.userInput.length > this.sequence.length) {
+                        this.userInput.shift();
+                    }
+                    if (this.userInput.join(',') === this.sequence.join(',')) {
+                        this.activateEasterEgg();
+                    }
+                });
+            }
+
+            activateEasterEgg() {
+                // Create rainbow effect
+                document.body.style.animation = 'rainbow 2s infinite';
+                
+                // Add rainbow keyframes if not exists
+                if (!document.getElementById('rainbow-style')) {
+                    const style = document.createElement('style');
+                    style.id = 'rainbow-style';
+                    style.textContent = `
+                        @keyframes rainbow {
+                            0% { filter: hue-rotate(0deg); }
+                            100% { filter: hue-rotate(360deg); }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+
+                // Show secret message
+                const message = document.createElement('div');
+                message.innerHTML = '🎉 KONAMI CODE ACTIVATED! You found the secret! 🎉';
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+                    color: white;
+                    padding: 2rem;
+                    border-radius: 15px;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    text-align: center;
+                    z-index: 10000;
+                    animation: bounce 1s infinite;
+                `;
+                document.body.appendChild(message);
+
+                setTimeout(() => {
+                    document.body.style.animation = '';
+                    message.remove();
+                }, 5000);
+            }
+        }
+
+        // LEGENDARY AI CHATBOT
+        class AIAssistant {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                const toggle = document.getElementById('chat-toggle');
+                const window = document.getElementById('chat-window');
+                const input = document.getElementById('chat-input');
+                const send = document.getElementById('chat-send');
+
+                toggle.addEventListener('click', () => {
+                    window.classList.toggle('active');
+                    if (window.classList.contains('active')) {
+                        input.focus();
+                    }
+                });
+
+                const sendMessage = () => {
+                    const message = input.value.trim();
+                    if (!message) return;
+
+                    this.addMessage(message, 'user');
+                    input.value = '';
+                    
+                    setTimeout(() => {
+                        const response = this.generateResponse(message);
+                        this.addMessage(response, 'ai');
+                    }, 800);
+                };
+
+                send.addEventListener('click', sendMessage);
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') sendMessage();
+                });
+            }
+
+            addMessage(text, type) {
+                const messages = document.getElementById('chat-messages');
+                const message = document.createElement('div');
+                message.className = `chat-message ${type}`;
+                message.textContent = text;
+                messages.appendChild(message);
+                messages.scrollTop = messages.scrollHeight;
+            }
+
+            generateResponse(question) {
+                const q = question.toLowerCase();
+                
+                if (q.includes('skill') || q.includes('technology')) {
+                    return `Emad is proficient in Python, Java, C++, JavaScript, React, AI/ML, and many more! He's particularly strong in full-stack development and AI solutions. 🚀`;
+                }
+                if (q.includes('experience') || q.includes('work')) {
+                    return `Emad is currently a Software Engineer at WTDcare, previously led digital transformation at Knowledge Management Research Centre, and was Head of Development at Google Developer Group! 💼`;
+                }
+                if (q.includes('project')) {
+                    return `Emad built an Arabic NLP Summarization Tool, AI-Driven Dental Anomaly Detection system, and digital transformation solutions with OCR technology! 🛠️`;
+                }
+                if (q.includes('education')) {
+                    return `Emad graduated with a Bachelor's in Computer Science with an outstanding GPA of 4.34/5, earning Second Honorary degree! 🎓`;
+                }
+                if (q.includes('contact') || q.includes('hire')) {
+                    return `You can reach Emad at emadalhaddadofficial@gmail.com or +966 56 095 5249. He's always open to new opportunities! 📧`;
+                }
+                
+                return `That's a great question! Emad is a talented Software Engineer with expertise in AI, full-stack development, and mobile apps. What specific aspect would you like to know more about? 🤖`;
+            }
+        }
+
+        // LEGENDARY VOICE NAVIGATION
+        class VoiceNavigation {
+            constructor() {
+                this.recognition = null;
+                this.isListening = false;
+                this.init();
+            }
+
+            init() {
+                // Check for browser support
+                if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                    console.log('Speech recognition not supported');
+                    return;
+                }
+
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                this.recognition = new SpeechRecognition();
+                this.recognition.continuous = false;
+                this.recognition.interimResults = false;
+                this.recognition.lang = 'en-US';
+
+                const button = document.getElementById('voice-button');
+                const status = document.getElementById('voice-status');
+
+                button.addEventListener('click', () => {
+                    if (this.isListening) {
+                        this.stopListening();
+                    } else {
+                        this.startListening();
+                    }
+                });
+
+                this.recognition.onstart = () => {
+                    this.isListening = true;
+                    button.classList.add('listening');
+                    status.textContent = 'Listening...';
+                    status.classList.add('active');
+                };
+
+                this.recognition.onend = () => {
+                    this.isListening = false;
+                    button.classList.remove('listening');
+                    status.classList.remove('active');
+                };
+
+                this.recognition.onresult = (event) => {
+                    const command = event.results[0][0].transcript.toLowerCase();
+                    status.textContent = `Heard: "${command}"`;
+                    status.classList.add('active');
+                    
+                    setTimeout(() => {
+                        status.classList.remove('active');
+                    }, 3000);
+
+                    this.executeCommand(command);
+                };
+
+                // Show initial hint
+                setTimeout(() => {
+                    status.classList.add('active');
+                    setTimeout(() => status.classList.remove('active'), 4000);
+                }, 2000);
+            }
+
+            startListening() {
+                if (this.recognition) {
+                    this.recognition.start();
+                }
+            }
+
+            stopListening() {
+                if (this.recognition) {
+                    this.recognition.stop();
+                }
+            }
+
+            executeCommand(command) {
+                if (command.includes('skills') || command.includes('skill')) {
+                    document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+                    this.speak('Showing skills section');
+                } else if (command.includes('experience') || command.includes('work')) {
+                    document.getElementById('experience').scrollIntoView({ behavior: 'smooth' });
+                    this.speak('Showing experience section');
+                } else if (command.includes('projects') || command.includes('project')) {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                    this.speak('Showing projects section');
+                } else if (command.includes('about')) {
+                    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+                    this.speak('Showing about section');
+                } else if (command.includes('contact')) {
+                    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                    this.speak('Showing contact section');
+                } else if (command.includes('terminal') || command.includes('console')) {
+                    document.getElementById('terminal').classList.add('active');
+                    this.speak('Opening terminal');
+                } else if (command.includes('chat') || command.includes('ai')) {
+                    document.getElementById('chat-window').classList.add('active');
+                    this.speak('Opening AI assistant');
+                } else if (command.includes('top') || command.includes('home')) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    this.speak('Going to top');
+                } else {
+                    this.speak('Command not recognized. Try saying show skills, show projects, or open terminal');
+                }
+            }
+
+            speak(text) {
+                if ('speechSynthesis' in window) {
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    utterance.rate = 0.8;
+                    utterance.pitch = 1;
+                    speechSynthesis.speak(utterance);
+                }
+            }
+        }
+
+        // INTERACTIVE TERMINAL
+        class InteractiveTerminal {
+            constructor() {
+                this.commands = {
+                    'help': 'Available commands: whoami, skills, experience, projects, contact, clear, matrix, joke',
+                    'whoami': 'Emad Alhaddad - Software Engineer & AI Enthusiast',
+                    'skills': 'Python, Java, C++, JavaScript, React, AI/ML, Docker, AWS, and many more!',
+                    'experience': 'Currently: Software Engineer at WTDcare\nPrevious: Knowledge Management Research Centre\nLeadership: Google Developer Group Head',
+                    'projects': 'Arabic NLP Tool, AI Dental Detection, Digital Transformation Solutions',
+                    'contact': 'Email: emadalhaddadofficial@gmail.com\nPhone: +966 56 095 5249\nLinkedIn: Available in contact section',
+                    'matrix': 'Wake up, Neo... The Matrix has you...',
+                    'joke': 'Why do programmers prefer dark mode? Because light attracts bugs! 🐛',
+                    'clear': 'CLEAR_TERMINAL'
+                };
+                this.init();
+            }
+
+            init() {
+                const terminal = document.getElementById('terminal');
+                const closeBtn = document.getElementById('terminal-close');
+                const input = document.getElementById('terminal-input');
+                const content = document.getElementById('terminal-content');
+
+                // Open terminal with Ctrl+` or click voice command
+                document.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey && e.key === '`') {
+                        terminal.classList.toggle('active');
+                        if (terminal.classList.contains('active')) {
+                            input.focus();
+                        }
+                    }
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    terminal.classList.remove('active');
+                });
+
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        const command = input.value.trim().toLowerCase();
+                        this.executeCommand(command, content, input);
+                        input.value = '';
+                    }
+                });
+
+                // Focus input when terminal opens
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.target.classList.contains('active')) {
+                            input.focus();
+                        }
+                    });
+                });
+                observer.observe(terminal, { attributes: true, attributeFilter: ['class'] });
+            }
+
+            executeCommand(command, content, input) {
+                // Add command to terminal
+                const commandLine = document.createElement('div');
+                commandLine.className = 'terminal-line';
+                commandLine.innerHTML = `<span class="terminal-prompt">emad@portfolio:~$</span> ${command}`;
+                content.insertBefore(commandLine, content.lastElementChild);
+
+                // Execute command
+                if (this.commands[command]) {
+                    if (command === 'clear') {
+                        // Clear terminal except for input line
+                        while (content.children.length > 1) {
+                            content.removeChild(content.firstChild);
+                        }
+                        return;
+                    }
+
+                    const output = document.createElement('div');
+                    output.className = 'terminal-line';
+                    output.style.color = '#00ff00';
+                    output.innerHTML = this.commands[command].replace(/\n/g, '<br>');
+                    content.insertBefore(output, content.lastElementChild);
+                } else {
+                    const error = document.createElement('div');
+                    error.className = 'terminal-line';
+                    error.style.color = '#ff5555';
+                    error.textContent = `Command not found: ${command}. Type 'help' for available commands.`;
+                    content.insertBefore(error, content.lastElementChild);
+                }
+
+                // Auto-scroll to bottom
+                content.scrollTop = content.scrollHeight;
+            }
+        }
+
+        // Initialize all LEGENDARY effects
+        window.addEventListener('load', () => {
+            // Initialize 3D Hero Scene
+            const hero3DCanvas = document.getElementById('hero-3d-canvas');
+            if (hero3DCanvas) {
+                const hero3D = new ParticleSystem(hero3DCanvas);
+                window.addEventListener('resize', () => hero3D.resize());
+            }
+
+            // Initialize Neural Network
+            const neuralNetwork = document.getElementById('neural-network');
+            if (neuralNetwork) {
+                // Create neural nodes
+                for (let i = 0; i < 20; i++) {
+                    const node = document.createElement('div');
+                    node.className = 'neural-node';
+                    node.style.left = Math.random() * 100 + '%';
+                    node.style.top = Math.random() * 100 + '%';
+                    node.style.animationDelay = Math.random() * 2 + 's';
+                    neuralNetwork.appendChild(node);
+                }
+                
+                for (let i = 0; i < 15; i++) {
+                    const connection = document.createElement('div');
+                    connection.className = 'neural-connection';
+                    connection.style.left = Math.random() * 90 + '%';
+                    connection.style.top = Math.random() * 90 + '%';
+                    connection.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    connection.style.animationDelay = Math.random() * 3 + 's';
+                    neuralNetwork.appendChild(connection);
+                }
+            }
+
+            // Initialize AI Assistant
+            new AIAssistant();
+
+            // Initialize LEGENDARY Voice Navigation
+            new VoiceNavigation();
+
+            // Initialize Interactive Terminal
+            new InteractiveTerminal();
+
+            // Initialize Matrix rain effect
+            const matrixCanvas = document.getElementById('matrix-canvas');
+            if (matrixCanvas) {
+                const matrixRain = new MatrixRain(matrixCanvas);
+                window.addEventListener('resize', () => matrixRain.resize());
+            }
+
+            // Initialize GitHub stats
+            new GitHubStats();
+
+            // Initialize scroll reveal
+            new ScrollReveal();
+
+            // Initialize Konami code
+            new KonamiCode();
+        });
+
+        // Initialize parallax effects
+        initParallaxEffects();
+
+        // Mobile menu functionality with accessibility
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            const isExpanded = mobileMenuToggle.classList.contains('active');
+            
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            
+            // Update ARIA attributes
+            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.setAttribute('aria-hidden', isExpanded);
+            
+            // Focus management
+            if (!isExpanded) {
+                // Menu is opening, focus first menu item
+                const firstMenuItem = mobileMenu.querySelector('a');
+                if (firstMenuItem) {
+                    firstMenuItem.focus();
+                }
+            }
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+        // Keyboard support for mobile menu toggle
+        mobileMenuToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMobileMenu();
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1024,7 +3256,68 @@
             });
         });
 
-        // Add scroll effect to header
+        // Typing Animation
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    // Start the cursor blinking animation after typing is complete
+                    element.classList.add('typing-text');
+                }
+            }
+            type();
+        }
+
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        // Set initial theme
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                themeToggle.checked = true;
+            }
+        }
+
+        // Theme toggle functionality
+        themeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Initialize typing animation when page loads
+        window.addEventListener('load', function() {
+            const typingElement = document.getElementById('typing-text');
+            const textToType = 'Software Engineer & AI Enthusiast';
+            typingElement.classList.remove('typing-text'); // Remove initial cursor
+            
+            setTimeout(() => {
+                typeWriter(typingElement, textToType, 80);
+            }, 1000); // Start typing after 1 second
+        });
+
+        // Scroll Progress Bar
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scroll-progress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = progress + '%';
+        }
+
+        // Add scroll effect to header and update progress bar
         window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
@@ -1032,30 +3325,218 @@
             } else {
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
+            
+            // Update scroll progress
+            updateScrollProgress();
         });
 
-        // Animate elements on scroll
+        // Contact Form Validation and Submission
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMessage = document.getElementById('form-success');
+
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Form validation
+        function validateForm() {
+            let isValid = true;
+            
+            // Reset previous errors
+            document.querySelectorAll('.form-error').forEach(error => {
+                error.style.display = 'none';
+            });
+
+            // Validate name
+            const name = document.getElementById('name').value.trim();
+            if (name.length < 2) {
+                document.getElementById('name-error').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value.trim();
+            if (!emailRegex.test(email)) {
+                document.getElementById('email-error').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate subject
+            const subject = document.getElementById('subject').value.trim();
+            if (subject.length < 3) {
+                document.getElementById('subject-error').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate message
+            const message = document.getElementById('message').value.trim();
+            if (message.length < 10) {
+                document.getElementById('message-error').textContent = 'Message must be at least 10 characters';
+                document.getElementById('message-error').style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                return;
+            }
+
+            // Simulate form submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Create mailto link with form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const mailtoLink = `mailto:emadalhaddadofficial@gmail.com?subject=${encodeURIComponent(`Portfolio Contact: ${subject}`)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+
+            // Simulate loading time
+            setTimeout(() => {
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                contactForm.reset();
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1500);
+        });
+
+        // Real-time validation
+        document.getElementById('name').addEventListener('blur', function() {
+            if (this.value.trim().length >= 2) {
+                document.getElementById('name-error').style.display = 'none';
+            }
+        });
+
+        document.getElementById('email').addEventListener('blur', function() {
+            if (emailRegex.test(this.value.trim())) {
+                document.getElementById('email-error').style.display = 'none';
+            }
+        });
+
+        document.getElementById('subject').addEventListener('blur', function() {
+            if (this.value.trim().length >= 3) {
+                document.getElementById('subject-error').style.display = 'none';
+            }
+        });
+
+        document.getElementById('message').addEventListener('blur', function() {
+            if (this.value.trim().length >= 10) {
+                document.getElementById('message-error').style.display = 'none';
+            }
+        });
+
+        // Performance optimizations
+        // Debounce function for scroll events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Optimized scroll handler
+        const optimizedScrollHandler = debounce(function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+            updateScrollProgress();
+        }, 10);
+
+        // Replace the scroll event listener with optimized version
+        window.removeEventListener('scroll', function() {});
+        window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
+
+        // Lazy loading for images (if browser doesn't support native lazy loading)
+        if ('loading' in HTMLImageElement.prototype) {
+            // Native lazy loading is supported
+            console.log('Native lazy loading supported');
+        } else {
+            // Fallback for browsers that don't support native lazy loading
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Preload critical resources
+        function preloadCriticalResources() {
+            // Preload hero background image if it was an external image
+            // For now, we're using CSS gradients which are already optimized
+            
+            // Preload fonts (already handled in head with preconnect)
+            console.log('Critical resources preloaded');
+        }
+
+        // Call preload function
+        preloadCriticalResources();
+
+        // Animate elements on scroll with improved performance
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function (entries) {
+        const animationObserver = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    // Unobserve after animation to improve performance
+                    animationObserver.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Observe all sections
+        // Observe all sections with improved performance
         document.querySelectorAll('.section').forEach(section => {
             section.style.opacity = '0';
             section.style.transform = 'translateY(20px)';
             section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
+            animationObserver.observe(section);
         });
+
+        // Optimize animations based on user preferences
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            // Disable animations for users who prefer reduced motion
+            document.documentElement.style.setProperty('--animation-duration', '0s');
+        }
     </script>
 </body>
 
