@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emad-alhaddad.github.io/sitemap.xml
