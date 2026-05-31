@@ -21,16 +21,6 @@
     --font-ar: 'Noto Sans Arabic', 'Inter', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-hero-bg: #0d2833;
-        --color-text: #ecedee;
-        --color-text-muted: #9ba1a6;
-        --color-surface: #1e2124;
-        --color-border: #2d3338;
-    }
-}
-
 *,
 *::before,
 *::after {
@@ -40,6 +30,7 @@
 }
 
 html {
+    color-scheme: light;
     scroll-behavior: smooth;
 }
 
@@ -109,12 +100,6 @@ button:focus-visible {
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
-}
-
-@media (prefers-color-scheme: dark) {
-    .site-header {
-        background: rgba(30, 33, 36, 0.92);
-    }
 }
 
 .site-header .container {
@@ -218,12 +203,6 @@ button:focus-visible {
     cursor: not-allowed;
     border: 1px solid var(--color-border);
     position: relative;
-}
-
-@media (prefers-color-scheme: dark) {
-    .btn-disabled {
-        background: #2d3338;
-    }
 }
 
 .btn-disabled:hover {
